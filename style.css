@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap");
+ /*formatação geral de fonte*/
+ *{
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+
+}
+/*largura da barra lateral*/
+html::-webkit-scrollbar {
+    width: 2rem;
+}
+/*cor da barra lateral*/
+html::-webkit-scrollbar-track {
+    background: rgb(255, 177, 228);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgb(187, 37, 135);
+}
+
+body {
+    background: rgb(234, 70, 138);
+}
+/*distacia do conteudo do elemento e borda postagens e promocao*/
+section {
+    padding: 5rem 9%;
+}
+/*alinhamento do postagens e promoções*/
+.heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+/*linha e formatação de caixa de promoção e postagens*/
+.heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: .1rem;
+    width: 100%;
+    background: #d48bb7;
+    z-index: -1;
+}
+/*cores e tamanho da promoção*/
+.heading span {
+    font-size: 2rem;
+    color: rgb(233, 80, 205);
+    background: hsla(334, 98%, 41%, 0.777);
+    padding: 4rem 1.3rem;
+    border: 0.1rem solid #9b0050;
+    border-radius: .5rem;/*arredonda*/
+}
+/* background e alinhamento de compre aqui*/
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    padding-right: 3rem;
+    background: linear-gradient(130deg, rgb(231, 63, 136)) 93%, transparent 90%;
+    background-color: rgb(219, 84, 154);
+    color: white;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+/*transformação do nav geral*/
+.btn:hover {
+    transform: scale(1.1);
+}
+/*organização do nav onde fica o sweet e as pesquisas*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 9%;
+    z-index: 1000;/*pilha de anuncio*/
+    background-color: #eacede;
+}
+/*cor do cake e tamanho*/
+.header .logo {
+    font-weight: bolder;
+    color: #fff;
+    font-size: 3rem;
+}
+/*cor do sweet na nav*/
+.header .logo span {
+    color: rgb(207, 66, 139);
+}
+/*alinhamento e tamanho das nav*/
+.header .navbar a {
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+}
+/*animação das pesquizinhas da barra*/
+.header .navbar a:hover {
+    background: rgb(218, 69, 141);
+}
+/*alinhamento e tamanho das 3 barras de pesquisa*/
+#menu-btn {
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+/*organização de margin*/
+.home {
+    padding: 0;
+    margin-top: 5rem;
+}
+/*alinhamento geral de imagem de fundo*/
+.home .swiper-slide {
+    min-height: 90vh;/*minima*/
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 2rem 9%;
+    display: flex;/*layout*/
+    align-items: center;
+}
+/*cor e alinhamneto*/
+.home .swiper-slide .content span {
+    font-size: 2rem;
+    color: rgb(255, 251, 251);
+    display: block;
+}
+/*cor de venha ja  comprar*/
+.home .swiper-slide .content h3 {
+    font-size: 5rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/*alinhando com sobre  nos e imagem*/
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: rgb(163, 19, 125);
+}
+/*alinhamento do itwem seta*/
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;/*forçar linhas organiozar*/
+    gap: 8rem;
+}
+/*alinhamento da imagem*/
+.about .image {
+    flex: 1 1 42rem;/*item posicionado*/
+    position: relative;
+}
+/*setinha rosa sobre a imagem*/
+.about .image::before,
+.about .image::after {
+    content: "";
+    position: absolute;
+    z-index: -1; /*ordem de pilha do elemento anunciado como as setas*/
+    background: rgb(166, 1, 86);
+    height: 15rem;
+    width: 15rem;
+}
+/*alinhamento da seta para direita*/
+.about .image::before {
+    top: 0;
+    left: 0;
+}
+/*alinhamento da esquerda*/
+.about .image::after {
+    bottom: 0;
+    right: 0;
+}
+/*alinhamento*/
+.about .image img {
+    width: 100%;
+    padding: 2rem;
+}
+/*alinhar o sobre nos dentro do container*/
+.about .content {
+    flex: 1 1 42rem;
+}
+/*sobre nos alinhamento, cor*/
+.about .content span {
+    font-size: 4rem;
+    color: rgb(255, 183, 241);
+}
+/*cor do titulo cada dia o melhor blabla*/
+.about .content .title {
+    font-size: 4rem;
+    color: #fff;
+    margin-top: 1.5rem;
+}
+/*alinhamento dos p*/
+.about .content p {
+    font-size: 1.5rem;
+    color: #e3dfdf;
+    padding: 1rem 0;
+    line-height: 2;
+}
+/*alinhamento horizontal*/
+.about .content .box-container {
+    display: flex; /*organiza linha e coluna*/
+    flex-wrap: wrap;/*deve ficar linha unic ou quebrado*/
+    gap: 2rem;
+    margin-top: 1rem;
+}
+/*tamanho e alinhamento sem ele diminui e volta a ser vertical*/
+.about .content .box-container .box {
+    flex: 1 1 20rem;/*alinhar itens*/
+}
+/*nomes bolo, cupcake e etc*/
+.about .content .box-container .box h3 {
+    font-size: 2rem;
+    color: #febce9;
+}
+/*cetinha do sobre nos*/
+.about .content .box-container .box h3 i {
+    padding-right: 1.5rem;
+    color: rgb(255, 194, 219);
+}
+/*alinhamento e estrutura das caixas*/
+.features .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;/*espaçamento coluna*/
+}
+/*cor de fundo da caixa das promocoes*/
+.features .box-container .box {
+    background: rgba(224, 224, 224, 0.438);
+}
+/*dar zoom, modificar imagem*/
+.features .box-container .box .image .img {
+    transform: scale(1.1);
+}
+/*alinhamento da imagemdentro da  caixa*/
+.features .box-container .box .image {
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;/*conteudo nao exibido maior que ele*/
+}
+/*transição de imagem*/
+.features .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;/*encaixa na caixa tudo preenchido*/
+    transition: all 0.3s ease;
+}
+/*dar zoom de imagem*/
+.features .box-container .box .image img:hover {
+    transform: scale(1.2);
+}
+/*alinhamento de imagem com texto*/
+.content img:hover {
+    transform: scale(1.2);/*posiçao afetada sem afetar info pag*/
+}
+/*alinhamento do ler mais da caixa de comida*/
+.features .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
+}
+/*letra do cafe, lanche e janta, organização sem isso ele some*/
+.features .box-container .box .content img {
+    height: 9rem;
+    margin-bottom: 1rem;
+    filter: invert(1);/*invest a mostra de cor fica fraca*/
+}
+/*h3 do caixa bangtan, sem isso some tudo*/
+.features .box-container .box .content h3 {
+    font-size: 2rem;
+    color: rgb(255, 0, 166);
+}
+/*p da caixa das promoçoes, sem isso some todos os p */
+.features .box-container .box .content p {
+    line-height: 2;
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    padding: 1rem 0;
+}
+
+/*background do banner de desconto*/
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.7)), url(crepe.jpg) no-repeat;
+    background-size: cover;/*capa*/
+    background-position: center;
+    background-attachment: fixed;/*fundo fixado*/
+    text-align: center;
+}
+/*junte se a nos alinhasmento*/     /*esses alinhamentos sem ele ficaria tudo preto e com  a letra minuscula*/
+.banner span {
+    font-size: 2rem;
+    color: rgb(238, 5, 145);
+}
+/*h3 do desconto*/
+.banner h3 {
+    padding-top: 1rem;
+    color: #fff;
+    text-transform: uppercase;/*trans todo elemento maisculo*/
+    font-size: 3.5rem;
+}
+/*p do banner de desconto*/
+.banner p {
+    margin: 1rem auto;
+    max-width: 60rem;
+    font-size: 1,9;
+    color: #aaa;
+    line-height: 4; /*comprimento certo entre a caixa*/
+}
+
+/*alinhamento da promoção do dia*/
+.review .review-slider .slide .user i {
+    font-size: 5rem;
+    margin-left: auto;
+    margin-right: 2rem;
+    color: rgb(238, 5, 141);
+}
+/*caixa fundo sem ele some de postagens*/
+.blogs .slide {
+    background:  rgba(224, 224, 224, 0.438);
+    margin-bottom: 7rem;
+}
+/*dá zoom na imagem postagem*/
+.blogs .slide:hover .image img {
+    transform: scale(1.1);/*trans 2d direcionada*/
+}
+/*caixa inteira tela cheia de postagens*/
+.blogs .slide .image {
+    height: 50rem;
+    width: 100%;
+    overflow: hidden;/*nao exibi conteudo maior doq ele proprio*/
+}
+/*alinahmento de largura e altura entre letras e fotos*/
+.blogs .slide .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;/*deve se ajustar no conteiner*/
+}
+/*tamanho de sabrina*/
+.blogs .slide .content {
+    padding: 2rem;
+}
+/*tamanho de sabrina*/
+.blogs .slide .content .link {
+    padding-bottom: 1.5rem;/*espaçamento botao*/
+    font-size: 1.5rem;
+}
+/*cor da sabrina*/
+.blogs .slide .content .link a {
+    color: rgb(238, 5, 176);
+}
+/*melhor doce cor e espaçamento*/
+.blogs .slide .content .link span {
+    color: #fff;
+    padding: 0 1rem;
+}
+/*h3 dos blog tamanho*/
+.blogs .slide .content h3 {
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1.5;
+}
+/*p dos blog tamanho*/
+.blogs .slide .content p {
+    font-size: 1.5rem;
+    color: #f9e4e4;
+    line-height: 2;/*altura da caixa linhas*/
+    padding: 1rem 0;/*espaçamento dos elementos*/
+}
+/*colunas do links,funcionamento e horario*/
+.footer .box-container {
+    display: grid;/*conteiner grade*/
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));/*layoot conteudo colunas linha*/
+    gap: 1.5rem;/*espaço linha coluna*/
+}
+/*h3 dos links rap, contatos e horarios*/
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: #fff;
+    padding: 1rem 1rem;
+}
+/*links rapidos organização geral*/
+.footer .box-container .box .links {
+    font-size: 1.5rem;
+    display: block; /*bloco, todod os elementos html*/
+    padding: 1rem 3rem;/*distanciamento de conteudos*/
+    color: #fff;
+}
+/*cor dos horarios*/
+.footer .box-container .box .links:hover {
+    color: rgb(255, 185, 228);
+}
+/*cor e tamanhos geral dos horarios*/
+.footer .box-container .box p {
+    font-size: 1.5rem;
+    color: #fcf6f6;
+    padding: 1rem 3rem;
+}
+/*cores e espaçamento de direita*/
+.footer .box-container .box p i {
+    padding-right: .5rem;/*preencher area da direita*/
+    color: rgb(243, 164, 218);
+}
+/*icons de rede social*/
+.footer .box-container .box .share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;/*altura da caixa de linhas na horizontal*/
+    font-size: 1.7rem;
+    color: #fff;
+    background: #ae097d7e;
+    border-radius: 50%;/*arredondar cantos*/
+    margin-right: .5rem;
+    text-align: center;
+}
+/*rodaé de email*/
+.footer .box-container .box form .email {
+    margin-bottom: 1rem;/*margin inferior*/
+    width: 100%;
+    background: #2d0e227b;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+/*alinhamento de msargin para direita*/
+.footer .box-container .box form .email {
+    margin-left: 2rem;
+}
